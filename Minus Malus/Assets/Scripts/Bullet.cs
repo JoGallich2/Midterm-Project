@@ -16,4 +16,6 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject); // Destroy the bullet after it hits a crate
         }
     }
+
+
 }

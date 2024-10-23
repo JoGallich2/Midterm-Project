@@ -909,7 +909,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: 0
   rotationSpeed: 5
-  bulletPrefabs: []
+  bulletPrefabs:
+  - {fileID: 759535436794036454, guid: 19d5593bd85435641856fe6c692e3a86, type: 3}
+  - {fileID: 759535436794036454, guid: bafe6ffb06c12c041b33b8f0c9ddcaa9, type: 3}
+  - {fileID: 759535436794036454, guid: 42a6f79e130ed68408fef47f70c6b139, type: 3}
 --- !u!1 &1476944457
 GameObject:
   m_ObjectHideFlags: 0
