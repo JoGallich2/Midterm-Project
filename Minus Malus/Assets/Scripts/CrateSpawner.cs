@@ -9,6 +9,10 @@ public class CrateSpawner : MonoBehaviour
     public float spawnInterval = 2f;
     public int CrateValue;
 
+    [Header("Dynamic")]
+    public float BoundsX;
+    public float BoundsY;
+
 
 
     // Start is called before the first frame update
@@ -21,8 +25,8 @@ public class CrateSpawner : MonoBehaviour
     void SpawnCrate()
     {
         CrateValue = Random.Range(1, 10); // Random crate value between 1 and 10
-        float randomX = Random.Range(-8f, 8f); 
-        Vector3 spawnPosition = new Vector3(randomX, 6f, 0);
+        float randomX = Random.Range(-BoundsX, BoundsX); 
+        Vector3 spawnPosition = new Vector3(randomX, BoundsY, 0);
         GameObject newCrate = Instantiate(cratePrefab, spawnPosition, Quaternion.identity);
         newCrate.GetComponent<Crate>().crateValue = CrateValue;
     }

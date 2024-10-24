@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     [Header("Inscribed")]
     public int Value = 0;
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Crate"))
         {
@@ -15,6 +15,11 @@ public class Bullet : MonoBehaviour
             crate.ApplyDamage(Value);
             Destroy(gameObject); // Destroy the bullet after it hits a crate
         }
+    }
+
+    public void SetValue(int value)
+    {
+        this.Value = value;
     }
 
 

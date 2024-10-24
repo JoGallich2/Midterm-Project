@@ -32,12 +32,18 @@ public class Crate : MonoBehaviour
             //If successful amount of damage is reached add points and destroy crate
             scoreManager.AddPoints(pointsOnSuccess);
             Destroy(gameObject);
+            UpdateText();
         }
-        else if(crateValue < 0)
+        else if (crateValue < 0)
         {
             //If not successful amount of damage is reached remove points and destroy crate
             scoreManager.AddPoints(pointsOnFail);
             Destroy(gameObject);
+            UpdateText();
+        }
+        else if (crateValue > 0)
+        {
+            UpdateText();
         }
     }
 
@@ -45,7 +51,7 @@ public class Crate : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.down * Time.deltaTime); // Move crate downards
-        if (transform.position.y < -5f) // Adjust based on screen bottom
+        if (transform.position.y < -0.5f) // Adjust based on screen bottom
         {
             scoreManager.AddPoints(pointsOnFail);
             Destroy(gameObject);
@@ -56,4 +62,5 @@ public class Crate : MonoBehaviour
     {
         valueText.text = crateValue.ToString();
     }
+
 }
