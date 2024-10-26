@@ -12,6 +12,7 @@ public class CannonController : MonoBehaviour
     public float rotationSpeed = 5f;
     public GameObject[] bulletPrefabs;
     public GameObject spawnPoint;
+    public GUIManager guiManager;
 
     // Update is called once per frame
     void Update()
@@ -35,15 +36,30 @@ public class CannonController : MonoBehaviour
         //Fire bullets based on key presses
         if (Input.GetKeyDown(KeyCode.S))
         {
-            FireBullet(0, 1);
+            if(guiManager.OneCount > 0)
+            {
+                FireBullet(0, 1);
+                guiManager.BulletWasShot(1);
+            }
+            
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            FireBullet(1, 2);
+            if (guiManager.TwoCount > 0)
+            {
+                FireBullet(1, 2);
+                guiManager.BulletWasShot(2);
+            }
+                
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
-            FireBullet(2 , 3);
+            if (guiManager.ThreeCount > 0)
+            {
+                FireBullet(2, 3);
+                guiManager.BulletWasShot(3);
+            }
+
         }
     }
 

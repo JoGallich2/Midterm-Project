@@ -6,10 +6,18 @@ using UnityEngine.UI;
 
 public class GUIManager : MonoBehaviour
 {
+    [Header("Inscribed")]
     public TMP_Text TimeText;
+    public TMP_Text BulletOneCount, BulletTwoCount, BulletThreeCount;
     public Button ButtonS;
-    public float timeRemaining = 120f;
     private bool timerIsRunning = false;
+
+    [Header("Dynamic")]
+    public int OneCount = 50;
+    public int TwoCount = 50;
+    public int ThreeCount = 50;
+    public float timeRemaining = 120f;
+    
 
 
     // Start is called before the first frame update
@@ -43,5 +51,24 @@ public class GUIManager : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         TimeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void BulletWasShot(int bulletNumber)
+    {
+        if(bulletNumber == 1)
+        {
+            OneCount--;
+            BulletOneCount.text = OneCount.ToString();
+        }
+        else if (bulletNumber == 2)
+        {
+            TwoCount--;
+            BulletTwoCount.text = TwoCount.ToString();
+        }
+        else if (bulletNumber == 3)
+        {
+            ThreeCount--;
+            BulletThreeCount.text = ThreeCount.ToString();
+        }
     }
 }
