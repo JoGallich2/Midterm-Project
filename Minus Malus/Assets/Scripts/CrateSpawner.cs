@@ -8,10 +8,14 @@ public class CrateSpawner : MonoBehaviour
     public GameObject cratePrefab;
     public float spawnInterval = 2f;
     public int CrateValue;
+    public GUIManager guiManager;
 
     [Header("Dynamic")]
     public float BoundsX;
     public float BoundsY;
+    public int maxCrateSpawnCount = 12;
+
+    private int CrateCount = 0;
 
 
 
@@ -24,10 +28,21 @@ public class CrateSpawner : MonoBehaviour
 
     void SpawnCrate()
     {
-        CrateValue = Random.Range(1, 10); // Random crate value between 1 and 10
-        float randomX = Random.Range(-BoundsX, BoundsX); 
-        Vector3 spawnPosition = new Vector3(randomX, BoundsY, 0);
-        GameObject newCrate = Instantiate(cratePrefab, spawnPosition, Quaternion.identity);
-        newCrate.GetComponent<Crate>().crateValue = CrateValue;
+        if(CrateCount < maxCrateSpawnCount)
+        {
+            CrateValue = Random.Range(1, 10); // Random crate value between 1 and 10
+            float randomX = Random.Range(-BoundsX, BoundsX);
+            Vector3 spawnPosition = new Vector3(randomX, BoundsY, 0);
+            GameObject newCrate = Instantiate(cratePrefab, spawnPosition, Quaternion.identity);
+            newCrate.GetComponent<Crate>().crateValue = CrateValue;
+
+            CrateCount++;
+            guiManager.UpdateCrateCount(maxCrateSpawnCount, CrateCount);
+        }
+        else
+        {
+            CancelInvoke("SpawnCrate");
+        }
+        
     }
 }

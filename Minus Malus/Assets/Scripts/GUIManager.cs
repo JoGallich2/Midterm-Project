@@ -9,6 +9,7 @@ public class GUIManager : MonoBehaviour
     [Header("Inscribed")]
     public TMP_Text TimeText;
     public TMP_Text BulletOneCount, BulletTwoCount, BulletThreeCount;
+    public TMP_Text CrateCountText;
     public Button ButtonS;
     private bool timerIsRunning = false;
 
@@ -17,6 +18,8 @@ public class GUIManager : MonoBehaviour
     public int TwoCount = 50;
     public int ThreeCount = 50;
     public float timeRemaining = 120f;
+
+    private int CrateCount;
     
 
 
@@ -70,5 +73,10 @@ public class GUIManager : MonoBehaviour
             ThreeCount--;
             BulletThreeCount.text = ThreeCount.ToString();
         }
+    }
+
+    public void UpdateCrateCount(int TotalCrates, int CratesDeployed)
+    {
+        CrateCountText.text = "x" + (TotalCrates - CratesDeployed).ToString();
     }
 }
