@@ -1222,7 +1222,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 50
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -2679,12 +2679,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cratePrefab: {fileID: 8032926682005648466, guid: 79cd82e91b47bf945923fc34f3635b91, type: 3}
-  spawnInterval: 2
+  spawnInterval: 1
   CrateValue: 0
   guiManager: {fileID: 963194233}
   BoundsX: 6
   BoundsY: 11
-  maxCrateSpawnCount: 12
+  maxCrateSpawnCount: 22
 --- !u!114 &963194232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2699,9 +2699,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1476944459}
   scoreSlider: {fileID: 469900947}
-  currentLevel: 1
+  currentLevel: 2
   levels: 2
-  maxScore: 50
+  maxScore: 250
 --- !u!114 &963194233
 MonoBehaviour:
   m_ObjectHideFlags: 0
