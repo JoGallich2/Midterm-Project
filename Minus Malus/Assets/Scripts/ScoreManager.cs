@@ -19,6 +19,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
+
         // Retrieve the current level from PlayerPrefs, or default to 1
         currentLevel = 1;
 
@@ -35,6 +36,7 @@ public class ScoreManager : MonoBehaviour
             score = PlayerPrefs.GetInt("CurrentScore");
             AddPoints(0); // Update UI with the retrieved score
         }
+        
     }
 
     // Add points to the current score

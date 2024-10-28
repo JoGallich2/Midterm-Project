@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Crate : MonoBehaviour
 {
@@ -53,6 +54,13 @@ public class Crate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (SceneManager.GetActiveScene().name == "StartScreen")
+        {
+            // If in the start screen, do not move or rotate the crate
+            return; // Exit the Update method
+        }
+
         transform.Translate(Vector2.down * Time.deltaTime); // Move crate downards
 
         // Rotate the crate side to side
