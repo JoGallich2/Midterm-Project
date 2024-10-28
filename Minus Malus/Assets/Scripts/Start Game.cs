@@ -9,4 +9,9 @@ public class StartGame : MonoBehaviour
     {
         SceneManager.LoadScene("StartScreen");
     }
+
+    public void StartLevelOne()
+    {
+        SceneManager.LoadScene("Level1");
+    }
 }
