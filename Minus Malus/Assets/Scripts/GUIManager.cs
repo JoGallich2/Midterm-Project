@@ -10,7 +10,6 @@ public class GUIManager : MonoBehaviour
     public TMP_Text TimeText;
     public TMP_Text BulletOneCount, BulletTwoCount, BulletThreeCount;
     public TMP_Text CrateCountText;
-    public Button ButtonS;
     private bool timerIsRunning = false;
 
     [Header("Dynamic")]

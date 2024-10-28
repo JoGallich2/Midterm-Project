@@ -17,11 +17,16 @@ public class ScoreManager : MonoBehaviour
     public int levels = 3;
     public int maxScore = 100; // Set this to the maximum score the slider can reach
 
+    void awake()
+    {
+        currentLevel = 1;
+        PlayerPrefs.SetInt("CurrentLevel", currentLevel);
+    }
     void Start()
     {
 
         // Retrieve the current level from PlayerPrefs, or default to 1
-        currentLevel = 1;
+        //currentLevel = PlayerPrefs.GetInt("CurrentLevel");
 
         // Set the slider's max value to match maxScore
         scoreSlider.maxValue = maxScore;
