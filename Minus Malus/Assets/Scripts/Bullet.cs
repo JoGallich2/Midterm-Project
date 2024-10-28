@@ -5,15 +5,16 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [Header("Inscribed")]
-    public int Value = 0;
+    public int Value;
 
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Crate"))
         {
             Crate crate = collision.gameObject.GetComponent<Crate>();
-            crate.ApplyDamage(Value);
             Destroy(gameObject); // Destroy the bullet after it hits a crate
+            crate.ApplyDamage(Value);
+            
         }
     }
 

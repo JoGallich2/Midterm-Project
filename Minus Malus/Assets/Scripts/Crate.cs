@@ -30,25 +30,27 @@ public class Crate : MonoBehaviour
 
     public void ApplyDamage(int damage)
     {
+        Debug.Log($"Applying damage: {damage}, Current crate value: {crateValue}");
         crateValue -= damage;
-        if (crateValue == 0)
+
+        if (crateValue <= 0)
         {
-            //If successful amount of damage is reached add points and destroy crate
-            scoreManager.AddPoints(pointsOnSuccess);
-            Destroy(gameObject);
-            UpdateText();
+            // Ensure crateValue does not go below zero
+            crateValue = Mathf.Max(crateValue, 0);
+
+            if (crateValue == 0)
+            {
+                scoreManager.AddPoints(pointsOnSuccess);
+            }
+            else
+            {
+                scoreManager.AddPoints(pointsOnFail);
+            }
+
+            Destroy(gameObject); // Destroy crate regardless
         }
-        else if (crateValue < 0)
-        {
-            //If not successful amount of damage is reached remove points and destroy crate
-            scoreManager.AddPoints(pointsOnFail);
-            Destroy(gameObject);
-            UpdateText();
-        }
-        else if (crateValue > 0)
-        {
-            UpdateText();
-        }
+
+        UpdateText();
     }
 
     // Update is called once per frame

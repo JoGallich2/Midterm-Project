@@ -2680,12 +2680,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cratePrefab: {fileID: 4394175848158677844, guid: 4afd36437da7ad24988926e6b17d6bd2, type: 3}
-  spawnInterval: 6
+  spawnInterval: 2
   CrateValue: 0
   guiManager: {fileID: 963194233}
   BoundsX: 6
   BoundsY: 11
-  maxCrateSpawnCount: 33
+  maxCrateSpawnCount: 25
 --- !u!114 &963194232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2700,10 +2700,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1476944459}
   scoreSlider: {fileID: 469900947}
-  score: 0
-  currentLevel: 1
+  score: 450
+  currentLevel: 3
   levels: 3
-  maxScore: 150
+  maxScore: 600
 --- !u!114 &963194233
 MonoBehaviour:
   m_ObjectHideFlags: 0
