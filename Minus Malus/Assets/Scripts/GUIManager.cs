@@ -20,7 +20,8 @@ public class GUIManager : MonoBehaviour
     public float timeRemaining = 120f;
 
     private int CrateCount;
-    
+    private ScoreManager scoreManager;
+
 
 
     // Start is called before the first frame update
@@ -43,6 +44,7 @@ public class GUIManager : MonoBehaviour
             {
                 timeRemaining = 0;
                 timerIsRunning = false;
+                scoreManager.EndGame();
                 // Add logic here if you want something to happen when the timer reaches 0
             }
         }

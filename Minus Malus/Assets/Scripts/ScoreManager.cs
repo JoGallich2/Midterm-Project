@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         // Retrieve the current level from PlayerPrefs, or default to 1
-        currentLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
+        currentLevel = 1;
 
         // Set the slider's max value to match maxScore
         scoreSlider.maxValue = maxScore;
@@ -77,6 +77,7 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetInt("FinalScore", score);
 
         // Try to set the high score using the final score
+        PlayerPrefs.SetInt("CurrentScore", score);
         HighScore.Try_Set_High_Score(score);
 
         // Load the end game scene

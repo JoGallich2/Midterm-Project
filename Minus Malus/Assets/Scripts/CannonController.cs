@@ -26,7 +26,7 @@ public class CannonController : MonoBehaviour
 
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        if (Mathf.Abs(angle - 90) < 48)
+        if (Mathf.Abs(angle - 90) < 50)
         {
             transform.rotation = Quaternion.Euler(0, 0, (angle - 90));
 
