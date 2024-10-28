@@ -793,7 +793,7 @@ MonoBehaviour:
   maxRotationAngle: 10
   crateValue: 0
   pointsOnSuccess: 10
-  pointsOnFail: -5
+  pointsOnFail: -10
 --- !u!54 &7215027846359525957
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -35,8 +35,6 @@ public class Crate : MonoBehaviour
 
         if (crateValue <= 0)
         {
-            // Ensure crateValue does not go below zero
-            crateValue = Mathf.Max(crateValue, 0);
 
             if (crateValue == 0)
             {
